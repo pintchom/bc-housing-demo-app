@@ -349,6 +349,44 @@ body {
   font-size: 1.2rem;
 }
 
+/* ---- Map Price Markers ---- */
+.price-marker-label {
+  position: absolute;
+  transform: translate(-50%, -100%);
+  background: var(--maroon);
+  color: white;
+  padding: 4px 10px;
+  border-radius: 6px;
+  font-weight: 700;
+  font-size: 0.78rem;
+  white-space: nowrap;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+  cursor: pointer;
+  transition: background 0.15s, transform 0.15s;
+}
+
+.price-marker-label::after {
+  content: '';
+  position: absolute;
+  bottom: -6px;
+  left: 50%;
+  transform: translateX(-50%);
+  border-left: 6px solid transparent;
+  border-right: 6px solid transparent;
+  border-top: 6px solid var(--maroon);
+  transition: border-top-color 0.15s;
+}
+
+.price-marker-label:hover {
+  background: var(--gold);
+  color: #000;
+  transform: translate(-50%, -100%) scale(1.08);
+}
+
+.price-marker-label:hover::after {
+  border-top-color: var(--gold);
+}
+
 /* ---- Conversation List ---- */
 .conversation-item:hover {
   background: #f8f9fa;

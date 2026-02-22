@@ -13,6 +13,13 @@ L.Icon.Default.mergeOptions({
   shadowUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/images/marker-shadow.png',
 });
 
+const createPriceIcon = (price) => L.divIcon({
+  className: '',
+  html: `<div class="price-marker-label">$${price.toLocaleString()}</div>`,
+  iconSize: [0, 0],
+  popupAnchor: [0, -32],
+});
+
 export default function Dashboard() {
   const navigate = useNavigate();
   const { listings, currentUser, myApplications, myFavoriteListings, myListings, unreadMessageCount } = useApp();
@@ -115,7 +122,7 @@ export default function Dashboard() {
               url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
             />
             {availableListings.map(listing => (
-              <Marker key={listing.id} position={[listing.lat, listing.lng]}>
+              <Marker key={listing.id} position={[listing.lat, listing.lng]} icon={createPriceIcon(listing.monthlyRent)}>
                 <Popup>
                   <div style={{ minWidth: 180 }}>
                     <strong>{listing.title}</strong><br />
