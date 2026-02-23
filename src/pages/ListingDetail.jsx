@@ -320,7 +320,7 @@ export default function ListingDetail() {
         {/* Right Column - Sidebar */}
         <div className="col-lg-4">
           {/* Cost Breakdown */}
-          <div className="card border-0 shadow-sm mb-4 sticky-top" style={{ top: '1rem' }}>
+          <div className="card border-0 shadow-sm mb-4 sticky-top" style={{ top: '5rem' }}>
             <div className="card-body">
               <h5 className="fw-bold mb-3">Cost Breakdown</h5>
               <div className="d-flex justify-content-between mb-2">
@@ -389,7 +389,7 @@ export default function ListingDetail() {
             </div>
           </div>
 
-          {/* Owner Card */}
+          {/* Owner Card */} 
           {owner && (
             <div className="card border-0 shadow-sm mb-4">
               <div className="card-body text-center">
