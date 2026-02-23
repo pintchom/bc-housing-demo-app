@@ -75,16 +75,25 @@ export default function ListingDetail() {
               />
               <div className="position-absolute top-0 end-0 p-3 d-flex gap-2">
                 <button
-                  className={`btn ${fav ? 'btn-danger' : 'btn-light'} rounded-circle shadow-sm`}
+                  className={`btn ${fav ? 'btn-danger' : 'btn-light'} rounded-circle shadow-sm d-flex align-items-center justify-content-center`}
                   onClick={() => toggleFavorite(listing.id)}
                   style={{ width: 40, height: 40 }}
                 >
                   <i className={`fa-${fav ? 'solid' : 'regular'} fa-heart`}></i>
                 </button>
-                <button className="btn btn-light rounded-circle shadow-sm" style={{ width: 40, height: 40 }}>
+
+                <button
+                  className="btn btn-light rounded-circle shadow-sm d-flex align-items-center justify-content-center"
+                  style={{ width: 40, height: 40 }}
+                >
                   <i className="fa-solid fa-share-nodes"></i>
                 </button>
-                <button className="btn btn-light rounded-circle shadow-sm" style={{ width: 40, height: 40 }} title="Report listing">
+
+                <button
+                  className="btn btn-light rounded-circle shadow-sm d-flex align-items-center justify-content-center"
+                  style={{ width: 40, height: 40 }}
+                  title="Report listing"
+                >
                   <i className="fa-solid fa-flag"></i>
                 </button>
               </div>
