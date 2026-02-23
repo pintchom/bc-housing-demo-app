@@ -1,5 +1,5 @@
 /* ============================================================
-   Hatchery - BC Housing Platform Styles
+   Perch - BC Housing Platform Styles
    ============================================================ */
 
 :root {
@@ -9,6 +9,7 @@
   --gold: #c99700;
   --gold-dark: #a67c00;
   --sidebar-width: 260px;
+  --sidebar-collapsed-width: 68px;
   --topbar-height: 60px;
 
   /* Bootstrap color overrides — BC scheme */
@@ -126,6 +127,7 @@ body {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
+  transition: margin-left 0.3s ease;
 }
 
 .page-content {
@@ -143,12 +145,16 @@ body {
   background: linear-gradient(180deg, #5a1018 0%, #1a0508 100%);
   z-index: 1040;
   overflow-y: auto;
-  transition: transform 0.3s ease;
+  transition: transform 0.3s ease, width 0.3s ease;
 }
 
 .sidebar-brand {
   padding: 20px;
   border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
 }
 
 .brand-icon {
@@ -161,6 +167,8 @@ body {
   justify-content: center;
   color: white;
   font-size: 1rem;
+  position: relative;
+  overflow: hidden;
 }
 
 .brand-icon-lg {
@@ -205,6 +213,51 @@ body {
 .sidebar .brand-icon {
   background: var(--gold);
   color: var(--maroon-dark);
+}
+
+/* Brand icon hover: crossfade chimney -> home icon */
+.brand-icon-default {
+  transition: opacity 0.3s ease;
+}
+
+.brand-icon-hover {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.sidebar-brand a:hover .brand-icon-default {
+  opacity: 0;
+}
+
+.sidebar-brand a:hover .brand-icon-hover {
+  opacity: 1;
+}
+
+/* Sidebar collapse toggle */
+.sidebar-collapse-btn {
+  background: none;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  color: rgba(255, 255, 255, 0.5);
+  width: 28px;
+  height: 28px;
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.2s;
+  font-size: 0.7rem;
+  flex-shrink: 0;
+}
+
+.sidebar-collapse-btn:hover {
+  color: white;
+  background: rgba(255, 255, 255, 0.1);
 }
 
 .sidebar-icon {
@@ -405,6 +458,56 @@ body {
 /* ---- Nav pills active state override ---- */
 .nav-pills .nav-link.active.bg-maroon {
   background-color: var(--maroon) !important;
+}
+
+/* ---- Sidebar Collapsed (Desktop Only) ---- */
+@media (min-width: 992px) {
+  .sidebar.collapsed {
+    width: var(--sidebar-collapsed-width);
+  }
+
+  .sidebar.collapsed .brand-text,
+  .sidebar.collapsed .sidebar-link span,
+  .sidebar.collapsed .sidebar-link .badge,
+  .sidebar.collapsed .section-label,
+  .sidebar.collapsed .user-info {
+    display: none;
+  }
+
+  .sidebar.collapsed .sidebar-brand {
+    flex-direction: column;
+    align-items: center;
+    padding: 16px 8px;
+  }
+
+  .sidebar.collapsed .sidebar-brand a > div {
+    justify-content: center;
+  }
+
+  .sidebar.collapsed .sidebar-link {
+    justify-content: center;
+    padding-left: 0;
+    padding-right: 0;
+    border-left-width: 0;
+  }
+
+  .sidebar.collapsed .sidebar-link.active {
+    background: rgba(255, 255, 255, 0.1);
+    border-left-width: 0;
+  }
+
+  .sidebar.collapsed .sidebar-icon {
+    font-size: 1.15rem;
+    width: auto;
+  }
+
+  .sidebar.collapsed .sidebar-user > div {
+    justify-content: center;
+  }
+
+  .main-content.sidebar-collapsed {
+    margin-left: var(--sidebar-collapsed-width);
+  }
 }
 
 /* ---- Responsive ---- */

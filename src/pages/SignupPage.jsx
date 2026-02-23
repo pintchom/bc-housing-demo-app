@@ -48,7 +48,7 @@ export default function SignupPage() {
                 <div className="brand-icon-lg mx-auto mb-3">
                   <i className="fa-solid fa-house-chimney"></i>
                 </div>
-                <h3 className="text-white fw-bold">Hatchery</h3>
+                <h3 className="text-white fw-bold">Perch</h3>
               </Link>
               <p className="text-white-50">Create your BC Housing account</p>
             </div>

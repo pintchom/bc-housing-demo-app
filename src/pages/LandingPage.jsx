@@ -15,7 +15,7 @@ export default function LandingPage() {
               <div className="brand-icon-lg">
                 <i className="fa-solid fa-house-chimney"></i>
               </div>
-              Hatchery
+              Perch
             </a>
             <div className="d-flex gap-2">
               {isAuthenticated ? (
@@ -83,7 +83,7 @@ export default function LandingPage() {
       {/* Features Section */}
       <section className="py-5 bg-white">
         <div className="container py-4">
-          <h2 className="text-center fw-bold mb-2">Why Hatchery?</h2>
+          <h2 className="text-center fw-bold mb-2">Why Perch?</h2>
           <p className="text-center text-muted mb-5">Built by BC students, for BC students</p>
 
           <div className="row g-4">
@@ -192,12 +192,12 @@ export default function LandingPage() {
             <div className="col-md-6">
               <div className="d-flex align-items-center gap-2">
                 <i className="fa-solid fa-house-chimney"></i>
-                <span className="fw-bold">Hatchery</span>
+                <span className="fw-bold">Perch</span>
                 <span className="text-white-50">| BC Housing Platform</span>
               </div>
             </div>
             <div className="col-md-6 text-md-end">
-              <small className="text-white-50">&copy; 2026 Hatchery. Built for Boston College students.</small>
+              <small className="text-white-50">&copy; 2026 Perch. Built for Boston College students.</small>
             </div>
           </div>
         </div>

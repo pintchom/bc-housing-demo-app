@@ -1,5 +1,5 @@
 // ============================================================
-// MOCK DATA - BC Housing Platform (Hatchery)
+// MOCK DATA - BC Housing Platform (Perch)
 // All data is hardcoded for prototype purposes
 // ============================================================
 
