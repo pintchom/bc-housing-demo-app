@@ -129,33 +129,53 @@ export default function ListingDetail() {
 
               <hr />
 
-              <div className="row g-3 text-center">
+              <div className="row row-cols-2 row-cols-md-3 row-cols-lg-5 g-4 text-center">
+
                 <div className="col">
-                  <i className="fa-solid fa-bed text-muted mb-1 d-block"></i>
-                  <strong>{listing.bedrooms === 0 ? 'Studio' : listing.bedrooms}</strong>
-                  <small className="text-muted d-block">{listing.bedrooms === 0 ? '' : 'Bedrooms'}</small>
+                  <div className="p-3 h-100 border rounded-3 bg-light d-flex flex-column justify-content-center align-items-center">
+                    <i className="fa-solid fa-bed fs-4 mb-2 text-secondary"></i>
+                    <div className="fw-semibold fs-5">
+                      {listing.bedrooms === 0 ? 'Studio' : listing.bedrooms}
+                    </div>
+                    {listing.bedrooms !== 0 && (
+                      <small className="text-muted">Bedrooms</small>
+                    )}
+                  </div>
                 </div>
+
                 <div className="col">
-                  <i className="fa-solid fa-bath text-muted mb-1 d-block"></i>
-                  <strong>{listing.bathrooms}</strong>
-                  <small className="text-muted d-block">Bathrooms</small>
+                  <div className="p-3 h-100 border rounded-3 bg-light d-flex flex-column justify-content-center align-items-center">
+                    <i className="fa-solid fa-bath fs-4 mb-2 text-secondary"></i>
+                    <div className="fw-semibold fs-5">{listing.bathrooms}</div>
+                    <small className="text-muted">Bathrooms</small>
+                  </div>
                 </div>
+
                 <div className="col">
-                  <i className="fa-solid fa-ruler-combined text-muted mb-1 d-block"></i>
-                  <strong>{listing.sqft}</strong>
-                  <small className="text-muted d-block">Sq Ft</small>
+                  <div className="p-3 h-100 border rounded-3 bg-light d-flex flex-column justify-content-center align-items-center">
+                    <i className="fa-solid fa-ruler-combined fs-4 mb-2 text-secondary"></i>
+                    <div className="fw-semibold fs-5">{listing.sqft}</div>
+                    <small className="text-muted">Sq Ft</small>
+                  </div>
                 </div>
+
                 <div className="col">
-                  <i className="fa-solid fa-stairs text-muted mb-1 d-block"></i>
-                  <strong>{listing.floor}</strong>
-                  <small className="text-muted d-block">Floor</small>
+                  <div className="p-3 h-100 border rounded-3 bg-light d-flex flex-column justify-content-center align-items-center">
+                    <i className="fa-solid fa-stairs fs-4 mb-2 text-secondary"></i>
+                    <div className="fw-semibold fs-5">{listing.floor}</div>
+                    <small className="text-muted">Floor</small>
+                  </div>
                 </div>
+
                 <div className="col">
-                  <i className="fa-solid fa-calendar text-muted mb-1 d-block"></i>
-                  <strong>{listing.leaseType}</strong>
-                  <small className="text-muted d-block">Type</small>
+                  <div className="p-3 h-100 border rounded-3 bg-light d-flex flex-column justify-content-center align-items-center">
+                    <i className="fa-solid fa-calendar fs-4 mb-2 text-secondary"></i>
+                    <div className="fw-semibold fs-5">{listing.leaseType}</div>
+                    <small className="text-muted">Lease Type</small>
+                  </div>
                 </div>
-              </div>
+
+                </div>
             </div>
           </div>
 
@@ -384,7 +404,7 @@ export default function ListingDetail() {
                 </div>
                 {owner.verified && (
                   <div className="mt-2">
-                    <span className="badge bg-primary"><i className="fa-solid fa-shield-check me-1"></i>BC Verified</span>
+                    <span className="badge bg-primary"><i className="fa-solid fa-check me-1"></i>BC Verified</span>
                   </div>
                 )}
                 <p className="text-muted small mt-2 mb-0">{owner.bio}</p>
