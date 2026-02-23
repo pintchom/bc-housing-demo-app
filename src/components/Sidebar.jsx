@@ -5,6 +5,7 @@ export default function Sidebar({ isOpen, onClose, isCollapsed, onToggleCollapse
   const { currentUser, isAuthenticated, unreadMessageCount, logout } = useApp();
 
   const navItems = [
+    { to: '/dashboard', icon: 'fa-house', label: 'Dashboard' },
     { to: '/search', icon: 'fa-magnifying-glass', label: 'Search Listings' },
     { to: '/listings/create', icon: 'fa-plus-circle', label: 'Create Listing' },
     { to: '/my-listings', icon: 'fa-building', label: 'My Listings' },
